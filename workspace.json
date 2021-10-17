@@ -1,6 +1,56 @@
 {
   "version": 2,
   "projects": {
+    "dark-side-express": {
+      "root": "apps/dark-side-express",
+      "sourceRoot": "apps/dark-side-express/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/dark-side-express",
+            "main": "apps/dark-side-express/src/main.ts",
+            "tsConfig": "apps/dark-side-express/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/dark-side-express/src/environments/environment.ts",
+                  "with": "apps/dark-side-express/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "dark-side-express:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/dark-side-express/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/dark-side-express"],
+          "options": {
+            "jestConfig": "apps/dark-side-express/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "light-side-react": {
       "root": "apps/light-side-react",
       "sourceRoot": "apps/light-side-react/src",
@@ -75,33 +125,6 @@
           "options": {
             "jestConfig": "apps/light-side-react/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "light-side-react-e2e": {
-      "root": "apps/light-side-react-e2e",
-      "sourceRoot": "apps/light-side-react-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/light-side-react-e2e/cypress.json",
-            "devServerTarget": "light-side-react:serve",
-            "tsConfig": "apps/light-side-react-e2e/tsconfig.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "light-side-react:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/light-side-react-e2e/**/*.{js,ts}"]
           }
         }
       }

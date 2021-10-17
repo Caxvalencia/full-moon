@@ -27,12 +27,11 @@
     ]
   },
   "projects": {
-    "light-side-react": {
+    "dark-side-express": {
       "tags": []
     },
-    "light-side-react-e2e": {
-      "tags": [],
-      "implicitDependencies": ["light-side-react"]
+    "light-side-react": {
+      "tags": []
     }
   }
 }
