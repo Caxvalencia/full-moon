@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@full-moon/dark-side/core": ["libs/dark-side/src/core/index.ts"],
+      "@full-moon/dark-side/data": ["libs/dark-side/src/data/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

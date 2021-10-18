@@ -1,6 +1,28 @@
 {
   "version": 2,
   "projects": {
+    "dark-side": {
+      "root": "libs/dark-side",
+      "sourceRoot": "libs/dark-side/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/dark-side/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dark-side"],
+          "options": {
+            "jestConfig": "libs/dark-side/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "dark-side-express": {
       "root": "apps/dark-side-express",
       "sourceRoot": "apps/dark-side-express/src",
