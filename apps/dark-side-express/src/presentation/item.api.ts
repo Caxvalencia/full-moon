@@ -8,13 +8,10 @@ import { ItemSearchController } from './controllers/item-search.controller';
 
 export const ItemApi = () => {
   const router = express.Router();
+  const repository: ProductRepository = injectionResolver(ProductRepository);
 
-  router.get(
-    '/:id',
-    ItemDetailController(injectionResolver(ProductRepository))
-  );
-
-  router.get('/', ItemSearchController(injectionResolver(ProductRepository)));
+  router.get('/:id', ItemDetailController(repository));
+  router.get('/', ItemSearchController(repository));
 
   return router;
 };
