@@ -1,6 +1,10 @@
-import * as express from 'express';
 import * as compression from 'compression';
-import { SearchApi } from './presentation/search.api';
+import * as express from 'express';
+
+import { ItemApi } from './presentation/item.api';
+import { registerProviders } from './providers';
+
+registerProviders();
 
 const port = process.env.SERVER_PORT || 3333;
 const app = express();
@@ -8,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(compression());
 
-app.use('/api/search', SearchApi);
+app.use('/api/items', ItemApi());
 
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
