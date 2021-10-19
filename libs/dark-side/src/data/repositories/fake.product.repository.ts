@@ -3,7 +3,7 @@ import { ProductEntity, ProductRepository } from '@full-moon/dark-side/core';
 import { ProductMapper } from '../mappers/product.mapper';
 
 export class FakeProductRepository implements ProductRepository {
-  public async search(_query: string): Promise<ProductEntity[]> {
+  public async search(): Promise<ProductEntity[]> {
     const response = [
       {
         id: 'MLA901089177',
@@ -126,7 +126,7 @@ export class FakeProductRepository implements ProductRepository {
     return ProductMapper.fromList(response);
   }
 
-  public async detail(_id: string): Promise<ProductEntity> {
+  public async detail(): Promise<ProductEntity> {
     const data = {
       id: 'MLA901089177',
       title: 'Pantalón Jogger Elastizado Tela Gabardina',
