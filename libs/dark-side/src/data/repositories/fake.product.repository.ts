@@ -1,7 +1,8 @@
 import { ProductEntity, ProductRepository } from '@full-moon/dark-side/core';
+
 import { ProductMapper } from '../mappers/product.mapper';
 
-export abstract class FakeProductRepository implements ProductRepository {
+export class FakeProductRepository implements ProductRepository {
   public async search(_query: string): Promise<ProductEntity[]> {
     const response = [
       {

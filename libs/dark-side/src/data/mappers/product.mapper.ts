@@ -1,4 +1,4 @@
-import { ProductEntity, ItemPriceEntity } from '@full-moon/dark-side/core';
+import { ItemPriceEntity, ProductEntity } from '@full-moon/dark-side/core';
 
 interface ProductResponse {
   id: string;
@@ -62,12 +62,12 @@ export class ProductMapper {
     priceToFind: number,
     currencyId: string
   ): ItemPriceEntity {
-    const price = prices.find((price) => price.amount === priceToFind);
-    const amount = price.amount ?? priceToFind;
+    const price = prices?.find((price) => price.amount === priceToFind);
+    const amount = price?.amount ?? priceToFind;
 
     return {
       amount,
-      currency: price.currency_id ?? currencyId,
+      currency: price?.currency_id ?? currencyId,
       decimals: this.getDecimals(amount),
     };
   }
