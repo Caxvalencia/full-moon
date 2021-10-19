@@ -16,9 +16,14 @@ jobs:
       - uses: actions/checkout@v2
         name: Checkout [main]
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - run: npm install -g nx
+
       - name: Run Linter, Tests and Build via Nx
         uses: mansagroup/nrwl-nx-action@v2
         with:
           targets: lint,test,build
           all: true
-   
+
