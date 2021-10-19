@@ -25,5 +25,5 @@ jobs:
         uses: mansagroup/nrwl-nx-action@v2
         with:
           targets: lint,test,build
-          all: true
+          all: 'true'
 
