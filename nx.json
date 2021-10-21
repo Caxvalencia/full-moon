@@ -35,6 +35,9 @@
     },
     "light-side-react": {
       "tags": []
+    },
+    "ui-react": {
+      "tags": []
     }
   }
 }

@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@full-moon/dark-side/core": ["libs/dark-side/src/core/index.ts"],
-      "@full-moon/dark-side/data": ["libs/dark-side/src/data/index.ts"]
+      "@full-moon/dark-side/data": ["libs/dark-side/src/data/index.ts"],
+      "@full-moon/ui/react": ["libs/ui/react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

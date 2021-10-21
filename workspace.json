@@ -150,6 +150,28 @@
           }
         }
       }
+    },
+    "ui-react": {
+      "root": "libs/ui/react",
+      "sourceRoot": "libs/ui/react/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/ui/react/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/react"],
+          "options": {
+            "jestConfig": "libs/ui/react/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
