@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { SearchBoxComponent } from '../presentation/components/search-box.component';
+import { SearchBoxComponent } from '@full-moon/ui/react';
+
 import { HomePage } from '../presentation/pages/home.page';
 import { NotFoundComponent } from '../presentation/pages/not-found.page';
 import { ProductDetailPage } from '../presentation/pages/product-detail.page';
