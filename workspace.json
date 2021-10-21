@@ -73,6 +73,99 @@
         }
       }
     },
+    "light-side-angular": {
+      "projectType": "application",
+      "root": "apps/light-side-angular",
+      "sourceRoot": "apps/light-side-angular/src",
+      "prefix": "full-moon",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/light-side-angular",
+            "index": "apps/light-side-angular/src/index.html",
+            "main": "apps/light-side-angular/src/main.ts",
+            "polyfills": "apps/light-side-angular/src/polyfills.ts",
+            "tsConfig": "apps/light-side-angular/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/light-side-angular/src/favicon.ico",
+              "apps/light-side-angular/src/assets"
+            ],
+            "styles": ["apps/light-side-angular/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/light-side-angular/src/environments/environment.ts",
+                  "with": "apps/light-side-angular/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "light-side-angular:build:production"
+            },
+            "development": {
+              "browserTarget": "light-side-angular:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "light-side-angular:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/light-side-angular/src/**/*.ts",
+              "apps/light-side-angular/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/light-side-angular"],
+          "options": {
+            "jestConfig": "apps/light-side-angular/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "light-side-react": {
       "root": "apps/light-side-react",
       "sourceRoot": "apps/light-side-react/src",
@@ -191,6 +284,20 @@
         "style": "scss",
         "linter": "eslint"
       }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "light-side-react"
