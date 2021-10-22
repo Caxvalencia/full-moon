@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'full-moon-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-  title = 'light-side-angular';
-}
+export class AppComponent {}
