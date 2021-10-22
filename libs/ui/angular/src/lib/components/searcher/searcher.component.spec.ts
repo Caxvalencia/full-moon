@@ -2,15 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearcherComponent } from './searcher.component';
 
-describe('SearcherComponent', () => {
+describe('UI/Angular/SearcherComponent', () => {
   let component: SearcherComponent;
   let fixture: ComponentFixture<SearcherComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearcherComponent ]
-    })
-    .compileComponents();
+      declarations: [SearcherComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -20,6 +20,7 @@
       "@full-moon/features/products/presentation": [
         "libs/features/products/src/presentation/index.ts"
       ],
+      "@full-moon/ui/angular": ["libs/ui/angular/src/index.ts"],
       "@full-moon/ui/react": ["libs/ui/react/src/index.ts"]
     }
   },

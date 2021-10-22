@@ -42,8 +42,11 @@
     "light-side-react": {
       "tags": []
     },
+    "ui-angular": {
+      "tags": ["ui"]
+    },
     "ui-react": {
-      "tags": []
+      "tags": ["ui"]
     }
   }
 }
