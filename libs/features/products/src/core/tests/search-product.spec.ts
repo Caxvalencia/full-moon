@@ -1,7 +1,7 @@
 import { ProductRepository } from '../repositories/product.repository';
 import { SearchProductUseCase } from '../use-cases/search-product.use-case';
 
-describe('Core: DarkSide/SearchProductUseCase', () => {
+describe('Core: Products/SearchProductUseCase', () => {
   let useCase: SearchProductUseCase | null;
   let repository: ProductRepository;
 

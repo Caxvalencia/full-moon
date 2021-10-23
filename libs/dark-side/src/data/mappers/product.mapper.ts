@@ -16,6 +16,12 @@ interface ProductResponse {
     id: number;
   };
 
+  pictures?: {
+    id: string;
+    url: string;
+    secure_url: string;
+  }[];
+
   prices?: {
     prices: {
       currency_id: string;
@@ -38,7 +44,8 @@ export class ProductMapper {
       item: {
         id: product.id,
         title: product.title,
-        picture: product.thumbnail,
+        thumbnail: product.thumbnail,
+        picture: this.getFirstPicture(product.pictures),
         condition: product.condition,
         soldQuantity: product.sold_quantity,
         isFreeShipping: product.shipping?.free_shipping,
@@ -55,6 +62,10 @@ export class ProductMapper {
 
   public static fromList(products: ProductResponse[]): ProductEntity[] {
     return products.map((product) => this.from(product));
+  }
+
+  private static getFirstPicture(pictures: ProductResponse['pictures']) {
+    return pictures?.length > 0 ? pictures[0].secure_url : '';
   }
 
   private static getPrice(

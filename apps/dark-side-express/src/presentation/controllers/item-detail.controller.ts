@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 
-import { ProductRepository } from '@full-moon/dark-side/core';
+import { ItemInteractor } from '@full-moon/dark-side/core';
 
-export function ItemDetailController(productRepository: ProductRepository) {
+export function ItemDetailController(itemInteractor: ItemInteractor) {
   return async (request: Request, response: Response) => {
-    const data = await productRepository.detail(request.params.id);
+    const data = await itemInteractor.detail(request.params.id);
 
     response.json(data);
   };

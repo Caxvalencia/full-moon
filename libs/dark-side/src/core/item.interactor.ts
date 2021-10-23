@@ -2,7 +2,7 @@ import { ProductRepository } from './repositories/product.repository';
 import { DetailProductUseCase } from './use-cases/detail-product.use-case';
 import { SearchProductUseCase } from './use-cases/search-product.use-case';
 
-export class ProductInteractor {
+export class ItemInteractor {
   public searchProductUseCase: SearchProductUseCase;
   public detailProductUseCase: DetailProductUseCase;
 

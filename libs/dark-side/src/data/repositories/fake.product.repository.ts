@@ -138,6 +138,17 @@ export class FakeProductRepository implements ProductRepository {
       condition: 'new',
       thumbnail:
         'http://http2.mlstatic.com/D_857806-MLA47776537755_102021-I.jpg',
+      pictures: [
+        {
+          id: '762451-MLA47939555562_102021',
+          url: 'http://http2.mlstatic.com/D_762451-MLA47939555562_102021-O.jpg',
+          secure_url:
+            'https://http2.mlstatic.com/D_762451-MLA47939555562_102021-O.jpg',
+          size: '434x500',
+          max_size: '720x829',
+          quality: '',
+        },
+      ],
       secure_thumbnail:
         'https://http2.mlstatic.com/D_857806-MLA47776537755_102021-I.jpg',
       shipping: {

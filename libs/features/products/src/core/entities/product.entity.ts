@@ -5,6 +5,7 @@ export interface ProductEntity {
   author: AuthorEntity;
   id: string;
   title: string;
+  thumbnail: string;
   image: string;
   condition: string;
   soldQuantity?: number;
