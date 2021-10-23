@@ -1,4 +1,4 @@
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe, DecimalPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ProductInteractor, ProductRepository } from '@full-moon/features/products/core';
@@ -20,6 +20,7 @@ import { ListPage } from './pages/list/list.page';
   declarations: [ListPage, DetailPage, ItemComponent],
   providers: [
     CurrencyPipe,
+    DecimalPipe,
     {
       provide: ProductRepository,
       useClass: HttpProductRepository,

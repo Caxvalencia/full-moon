@@ -10,7 +10,7 @@
     priceAmount="{{ product.price.amount | currency }}"
     [shippingIcon]="config.shippingIcon"
     [title]="product.title"
-    [image]="product.image"
+    [image]="product.thumbnail"
     [isFreeShipping]="product.isFreeShipping"
     (selected)="goToDetails(product.id)"
   ></full-moon-products-item>

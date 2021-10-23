@@ -1,1 +1,29 @@
-DETAIL
+<full-moon-breadcrumb
+  class="margin-vertical"
+  [breads]="viewModel.product?.categories ?? []"
+></full-moon-breadcrumb>
+
+<div class="container">
+  <div *ngIf="viewModel.product">
+    <img class="detail__image" [src]="viewModel.product.image" alt="" />
+
+    <span class="margin-bottom">
+      {{ viewModel.product.condition }} - {{ viewModel.product.soldQuantity |
+      number : '1.0-0' }} vendidos
+    </span>
+
+    <h2 class="detail__title margin-bottom-2x">
+      {{ viewModel.product.title }}
+    </h2>
+
+    <div class="detail__price">
+      <span class="detail__price-decimal"
+        >{{ viewModel.product.price.amount | number : '1.2-2' }}</span
+      >
+    </div>
+
+    <div *ngIf="!viewModel.product" class="empty-case flex">
+      No se encontrarón resultados
+    </div>
+  </div>
+</div>
