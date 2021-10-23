@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+}
+
+.breadcrumb {
+  color: var(--color-placeholder);
+  font-size: 14px;
+  list-style: none;
+
+  &:last-child {
+    font-weight: bold;
+  }
+}
