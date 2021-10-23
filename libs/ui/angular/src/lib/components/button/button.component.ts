@@ -30,11 +30,9 @@ export class ButtonComponent implements AfterViewInit {
     const button: HTMLButtonElement =
       this.elementRef.nativeElement.querySelector('.button');
 
-    console.log(this.type, button);
-
     button?.style.setProperty(
       '--button-background-color',
-      'var(' + this.type ?? ButtonType.PRIMARY + ')'
+      'var(' + (this.type ?? ButtonType.PRIMARY) + ')'
     );
   }
 }
