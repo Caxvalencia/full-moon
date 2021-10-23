@@ -1,0 +1,13 @@
+<header class="header flex">
+  <div class="toolbar flex">
+    <img class="toolbar__logo" [src]="logo" [alt]="logoAlt" />
+
+    <div class="toolbar__searcher">
+      <full-moon-searcher
+        placeholder="searchPlaceholder"
+        buttonAriaLabel="Buscar"
+        (searchPressed)="searchPressed.emit($event)"
+      ></full-moon-searcher>
+    </div>
+  </div>
+</header>

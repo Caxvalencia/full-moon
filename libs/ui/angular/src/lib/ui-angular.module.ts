@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { FullMoonComponentsModule } from './components/full-moon-components.module';
+import { UiAngularComponentsModule } from './components/ui-angular-components.module';
+import { UiAngularOrganismsModule } from './organisms/ui-angular-organisms.module';
 
-const MODULES = [FullMoonComponentsModule];
+const MODULES = [UiAngularComponentsModule, UiAngularOrganismsModule];
 
 @NgModule({
   imports: MODULES,

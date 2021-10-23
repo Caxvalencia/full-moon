@@ -12,4 +12,4 @@ const DECLARATIONS = [SearcherComponent, BreadcrumbComponent];
   declarations: DECLARATIONS,
   exports: DECLARATIONS,
 })
-export class FullMoonComponentsModule {}
+export class UiAngularComponentsModule {}
