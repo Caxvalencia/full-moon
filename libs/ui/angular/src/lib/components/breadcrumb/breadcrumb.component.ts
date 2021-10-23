@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'full-moon-breadcrumb',
@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./breadcrumb.component.scss'],
 })
 export class BreadcrumbComponent {
-  public breads: string[] = [
-    'Electronica, Audio y Video',
-    'iPod',
-    'Apple',
-    'Apple iPod touch',
-    '32GB',
-  ];
+  @Input() public breads: string[] = [];
 }
