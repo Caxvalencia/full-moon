@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'full-moon-searcher',
@@ -6,6 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./searcher.component.scss'],
 })
 export class SearcherComponent {
-  @Input() placeholder = '';
-  @Input() buttonAriaLabel!: string;
+  @Input() public placeholder = '';
+  @Input() public buttonAriaLabel!: string;
+
+  @Output() public searchPressed = new EventEmitter<string>();
 }
