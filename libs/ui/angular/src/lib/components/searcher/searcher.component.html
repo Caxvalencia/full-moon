@@ -1,10 +1,14 @@
 <input
   type="text"
   class="searcher__box"
-  aria-label="Nunca dejes de buscar"
-  placeholder="Nunca dejes de buscar"
+  [attr.aria-label]="placeholder"
+  [placeholder]="placeholder"
   autoCorrect="off"
   autoComplete="off"
 />
 
-<button type="button" class="searcher__button" aria-label="Buscar"></button>
+<button
+  type="button"
+  class="searcher__button"
+  [attr.aria-label]="buttonAriaLabel"
+></button>
