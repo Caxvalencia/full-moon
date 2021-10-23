@@ -31,6 +31,6 @@ Render box for searching and button for activating search.
 
 ## Events
 
-| Name       | Description                               |
-| ---------- | ----------------------------------------- |
-| `onSearch` | Emitted when the user taps on the button. |
+| Name            | Description                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| `searchPressed` | Emitted when the user taps on the button or press ENTER key on input box. |

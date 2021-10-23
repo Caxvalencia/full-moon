@@ -1,15 +1,18 @@
-<!-- <full-moon-breadcrumb></full-moon-breadcrumb> -->
+<full-moon-breadcrumb class="margin-vertical"></full-moon-breadcrumb>
 
-<div>
-  <div
+<div class="container">
+  <full-moon-products-item
     *ngFor="let product of viewModel.products"
-    (click)="goToDetails(product.id)"
-  >
-    <img class="item__image" [src]="product.image" alt="{{ product.title }}" />
-    <div class="item__price">{{ product.price.amount | currency }}</div>
-    isFreeShipping: {{ product.isFreeShipping }}
-    <div class="item__title">{{ product.title }}</div>
-  </div>
+    class="product-item"
+    shippingIcon="assets/images/shipping.png"
+    priceAmount="{{ product.price.amount | currency }}"
+    [title]="product.title"
+    [image]="product.image"
+    [isFreeShipping]="product.isFreeShipping"
+    (selected)="goToDetails(product.id)"
+  ></full-moon-products-item>
 
-  <div *ngIf="viewModel.products.length <= 0">No se encontrarón resultados</div>
+  <div *ngIf="viewModel.products.length <= 0" class="empty-case flex">
+    No se encontrarón resultados
+  </div>
 </div>
