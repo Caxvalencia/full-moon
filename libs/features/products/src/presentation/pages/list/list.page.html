@@ -1,1 +1,15 @@
-LIST!
+<!-- <full-moon-breadcrumb></full-moon-breadcrumb> -->
+
+<div>
+  <div
+    *ngFor="let product of viewModel.products"
+    (click)="goToDetails(product.id)"
+  >
+    <img class="item__image" [src]="product.image" alt="{{ product.title }}" />
+    <div class="item__price">{{ product.price.amount | currency }}</div>
+    isFreeShipping: {{ product.isFreeShipping }}
+    <div class="item__title">{{ product.title }}</div>
+  </div>
+
+  <div *ngIf="viewModel.products.length <= 0">No se encontrarón resultados</div>
+</div>

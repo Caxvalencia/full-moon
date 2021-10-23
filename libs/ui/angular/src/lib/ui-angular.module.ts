@@ -1,10 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { FullMoonComponentsModule } from './components/full-moon-components.module';
 
+const MODULES = [FullMoonComponentsModule];
+
 @NgModule({
-  imports: [CommonModule, FullMoonComponentsModule],
-  exports: [FullMoonComponentsModule],
+  imports: MODULES,
+  exports: MODULES,
 })
 export class UiAngularModule {}
