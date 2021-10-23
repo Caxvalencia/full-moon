@@ -10,6 +10,10 @@
 
 .margin {
   margin: 1rem;
+
+  &-2x {
+    margin: 2rem;
+  }
 }
 
 .margin-left {

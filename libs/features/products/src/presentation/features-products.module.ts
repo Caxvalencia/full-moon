@@ -6,6 +6,7 @@ import { HttpProductRepository } from '@full-moon/features/products/data';
 import { UiAngularModule } from '@full-moon/ui/angular';
 
 import { ItemComponent } from './components/item/item.component';
+import { SummaryComponent } from './components/summary/summary.component';
 import { FeaturesProductsRoutingModule } from './features-products-routing.module';
 import { DetailPage } from './pages/detail/detail.page';
 import { ListPage } from './pages/list/list.page';
@@ -17,7 +18,7 @@ import { ListPage } from './pages/list/list.page';
     UiAngularModule,
     FeaturesProductsRoutingModule,
   ],
-  declarations: [ListPage, DetailPage, ItemComponent],
+  declarations: [ListPage, DetailPage, ItemComponent, SummaryComponent],
   providers: [
     CurrencyPipe,
     DecimalPipe,
