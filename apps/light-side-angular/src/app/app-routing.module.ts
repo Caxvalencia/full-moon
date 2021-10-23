@@ -7,13 +7,15 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-  },
-  {
-    path: 'items',
-    loadChildren: () =>
-      import('@full-moon/features/products/presentation').then(
-        (m) => m.FeaturesProductsModule
-      ),
+    children: [
+      {
+        path: 'items',
+        loadChildren: () =>
+          import('@full-moon/features/products/presentation').then(
+            (m) => m.FeaturesProductsModule
+          ),
+      },
+    ],
   },
 
   // --------------------------
