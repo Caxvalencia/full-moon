@@ -6,12 +6,12 @@
   autoComplete="off"
   [attr.aria-label]="placeholder"
   [placeholder]="placeholder"
-  (keydown.enter)="searchPressed.emit(searchBox.value)"
+  (keydown.enter)="searchBox.value && searchPressed.emit(searchBox.value)"
 />
 
 <button
   type="button"
   class="searcher__button"
   [attr.aria-label]="buttonAriaLabel"
-  (click)="searchPressed.emit(searchBox.value)"
+  (click)="searchBox.value && searchPressed.emit(searchBox.value)"
 ></button>
