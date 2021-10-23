@@ -6,7 +6,6 @@ interface ProductResponse {
   thumbnail: string;
   condition: string;
   sold_quantity: number;
-  description?: string;
   price: number;
   currency_id: string;
   category_id: string;
@@ -35,7 +34,10 @@ interface ProductResponse {
 }
 
 export class ProductMapper {
-  public static from(product: ProductResponse): ProductEntity {
+  public static from(
+    product: ProductResponse,
+    description = ''
+  ): ProductEntity {
     return {
       author: {
         name: '',
@@ -49,7 +51,7 @@ export class ProductMapper {
         condition: product.condition,
         soldQuantity: product.sold_quantity,
         isFreeShipping: product.shipping?.free_shipping,
-        description: product.description,
+        description,
 
         price: this.getPrice(
           product.prices?.prices,
