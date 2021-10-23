@@ -1,8 +1,8 @@
 import { ProductRepository } from '@full-moon/dark-side/core';
-import { FetchProductRepository } from '@full-moon/dark-side/data';
+import { FakeProductRepository } from '@full-moon/dark-side/data';
 
 const providers = {
-  [ProductRepository.name]: FetchProductRepository,
+  [ProductRepository.name]: FakeProductRepository,
 };
 
 export const environment = {
