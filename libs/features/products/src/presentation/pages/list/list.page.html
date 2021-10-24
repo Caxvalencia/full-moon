@@ -1,6 +1,7 @@
 <full-moon-breadcrumb
   class="margin-vertical"
   [breads]="viewModel.categories"
+  (breadPressed)="router.navigate(['/items'], { queryParams: { search: $event } });"
 ></full-moon-breadcrumb>
 
 <div class="container">
@@ -16,6 +17,6 @@
   ></full-moon-products-item>
 
   <div *ngIf="viewModel.products.length <= 0" class="empty-case flex">
-    No se encontrarón resultados
+    No se encontraron resultados
   </div>
 </div>

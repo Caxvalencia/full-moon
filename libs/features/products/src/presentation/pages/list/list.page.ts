@@ -23,7 +23,7 @@ export class ListPage implements OnInit, OnDestroy {
   private queryStringSubscription$!: Subscription;
 
   constructor(
-    private router: Router,
+    public router: Router,
     private route: ActivatedRoute,
     private productInteractor: ProductInteractor
   ) {}
