@@ -11,6 +11,11 @@
 
   &__item {
     display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
 
     &:last-child {
       font-weight: bold;
