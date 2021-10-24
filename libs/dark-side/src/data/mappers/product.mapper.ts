@@ -36,7 +36,8 @@ interface ProductResponse {
 export class ProductMapper {
   public static from(
     product: ProductResponse,
-    description = ''
+    description = '',
+    categories: string[] = []
   ): ProductEntity {
     return {
       author: {
@@ -59,6 +60,7 @@ export class ProductMapper {
           product.currency_id
         ),
       },
+      categories,
     };
   }
 
