@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 
-enum ButtonType {
+export enum ButtonType {
   PRIMARY = '--button-primary',
   SECONDARY = '--button-secondary',
   TERTIARY = '--button-tertiary',
