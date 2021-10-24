@@ -4,6 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductInteractor } from '@full-moon/features/products/core';
 
+import { CategoriesService } from '../../services/categories.service';
 import { ListConfig } from './list.config';
 import { ListViewModel } from './list.view-model';
 
@@ -25,7 +26,8 @@ export class ListPage implements OnInit, OnDestroy {
   constructor(
     public router: Router,
     private route: ActivatedRoute,
-    private productInteractor: ProductInteractor
+    private productInteractor: ProductInteractor,
+    private categoriesService: CategoriesService
   ) {}
 
   public async ngOnInit() {
@@ -53,7 +55,8 @@ export class ListPage implements OnInit, OnDestroy {
   private async loadResults(search: string) {
     try {
       this.viewModel.products = await this.productInteractor.search(search);
-      this.viewModel.categories = this.viewModel.products[0].categories;
+
+      this.categoriesService.emit(this.viewModel.products[0]?.categories);
     } catch (error) {
       console.error(error);
     }

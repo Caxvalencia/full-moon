@@ -4,6 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductInteractor } from '@full-moon/features/products/core';
 
+import { CategoriesService } from '../../services/categories.service';
 import { DetailViewModel } from './detail.view-model';
 
 @Component({
@@ -18,7 +19,8 @@ export class DetailPage implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private productInteractor: ProductInteractor
+    private productInteractor: ProductInteractor,
+    private categoriesService: CategoriesService
   ) {}
 
   public async ngOnInit() {
@@ -44,6 +46,8 @@ export class DetailPage implements OnInit, OnDestroy {
 
     try {
       this.viewModel.product = await this.productInteractor.detail(id);
+
+      this.categoriesService.emit(this.viewModel.product.categories);
     } catch (error) {
       this.viewModel.product = null;
       console.log(error);

@@ -1,15 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CategoriesService } from '@full-moon/features/products/presentation';
 
 @Component({
   selector: 'full-moon-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
-  constructor(private router: Router) {}
+export class HomePage implements OnInit, OnDestroy {
+  public breadcrumbs: string[] = [];
 
-  public onSearchPressed(search: string) {
+  constructor(
+    private router: Router,
+    private categoriesService: CategoriesService
+  ) {}
+
+  public ngOnInit() {
+    this.categoriesService.subscribe((categories) => {
+      this.breadcrumbs = categories;
+    });
+  }
+
+  public ngOnDestroy(): void {
+    this.categoriesService.unsubscribe();
+  }
+
+  public onSearch(search: string) {
     this.router.navigate(['/items'], { queryParams: { search } });
   }
 

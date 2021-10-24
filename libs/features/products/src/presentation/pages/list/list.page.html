@@ -1,9 +1,3 @@
-<full-moon-breadcrumb
-  class="margin-vertical"
-  [breads]="viewModel.categories"
-  (breadPressed)="router.navigate(['/items'], { queryParams: { search: $event } });"
-></full-moon-breadcrumb>
-
 <div class="container">
   <full-moon-products-item
     *ngFor="let product of viewModel.products"
