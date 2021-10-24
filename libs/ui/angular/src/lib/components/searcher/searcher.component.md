@@ -12,6 +12,7 @@ Render box for searching and button for activating search.
 <full-moon-searcher
   placeholder="Nunca dejes de buscar"
   buttonAriaLabel="Buscar"
+  (searchPressed)="search($event)"
 ></full-moon-searcher>
 ```
 
@@ -31,6 +32,6 @@ Render box for searching and button for activating search.
 
 ## Events
 
-| Name            | Description                                                               |
-| --------------- | ------------------------------------------------------------------------- |
-| `searchPressed` | Emitted when the user taps on the button or press ENTER key on input box. |
+| Name            | Description                                                                                            | $event   |
+| --------------- | ------------------------------------------------------------------------------------------------------ | -------- |
+| `searchPressed` | Emitted when the user taps on the button or press `ENTER` key on input box **and not is empty value**. | `string` |
