@@ -5,14 +5,15 @@ import { ProductEntity, ProductRepository } from '@full-moon/dark-side/core';
 import { ProductMapper } from '../mappers/product.mapper';
 
 const API_SEARCH_ENDPOINT = 'https://api.mercadolibre.com/sites/MLA/search?q=';
+const API_SEARCH_ENDPOINT_LIMIT = '&limit=4';
 const API_DETAIL_ENDPOINT = 'https://api.mercadolibre.com/items/';
 const API_CATEGORIES_ENDPOINT = 'https://api.mercadolibre.com/categories/';
 
 export class FetchProductRepository implements ProductRepository {
   public async search(query: string): Promise<ProductEntity[]> {
-    const response = await fetch(API_SEARCH_ENDPOINT + query).then((response) =>
-      response.json()
-    );
+    const response = await fetch(
+      API_SEARCH_ENDPOINT + query + API_SEARCH_ENDPOINT_LIMIT
+    ).then((response) => response.json());
 
     const products = ProductMapper.fromList(response.results);
 
