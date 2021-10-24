@@ -10,7 +10,9 @@ export function ItemSearchController(itemInteractor: ItemInteractor) {
       return;
     }
 
-    const data = await itemInteractor.search(request.query.q as string);
+    const data = await itemInteractor.search(
+      encodeURIComponent(request.query.q as string)
+    );
 
     response.json(data);
   };

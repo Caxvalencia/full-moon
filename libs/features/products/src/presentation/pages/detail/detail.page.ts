@@ -45,7 +45,9 @@ export class DetailPage implements OnInit, OnDestroy {
     }
 
     try {
-      this.viewModel.product = await this.productInteractor.detail(id);
+      this.viewModel.product = await this.productInteractor.detail(
+        encodeURIComponent(id)
+      );
 
       this.categoriesService.emit(this.viewModel.product.categories);
     } catch (error) {

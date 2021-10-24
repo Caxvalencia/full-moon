@@ -54,7 +54,9 @@ export class ListPage implements OnInit, OnDestroy {
 
   private async loadResults(search: string) {
     try {
-      this.viewModel.products = await this.productInteractor.search(search);
+      this.viewModel.products = await this.productInteractor.search(
+        encodeURIComponent(search)
+      );
 
       this.categoriesService.emit(this.viewModel.products[0]?.categories);
     } catch (error) {
