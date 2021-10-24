@@ -12,5 +12,5 @@ export interface ProductEntity {
   description?: string;
   price: ItemPriceEntity;
   isFreeShipping: boolean;
-  categories?: string[];
+  categories: string[];
 }

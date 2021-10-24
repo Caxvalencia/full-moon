@@ -5,7 +5,7 @@ export class ProductMapper {
   public static from(product: ProductResponseEntity): ProductEntity {
     return {
       author: product.author,
-      categories: product.categories,
+      categories: product.categories as string[],
       image: product.item.picture,
       ...product.item,
     };
