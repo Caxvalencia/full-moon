@@ -30,10 +30,10 @@ import module:
 
 ## Components
 
-- [Breadcrumb](#./src/lib/components/breadcrumb/breadcrumb.component.md)
-- [Searcher](#./src/lib/components/searcher/searcher.component.md)
-- [Button](#./src/lib/components/button/button.component.md)
+- [Breadcrumb](./angular/src/lib/components/breadcrumb/breadcrumb.component.md)
+- [Searcher](./angular/src/lib/components/searcher/searcher.component.md)
+- [Button](./angular/src/lib/components/button/button.component.md)
 
 ## Organisms
 
-- [header](#/organisms/header)
+- [header](./angular/src/lib/organisms/header)
