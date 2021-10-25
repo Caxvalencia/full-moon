@@ -10,7 +10,10 @@
     (selected)="goToDetails(product.id)"
   ></full-moon-products-item>
 
-  <div *ngIf="viewModel.products.length <= 0" class="empty-case flex">
+  <full-moon-state-indicator
+    [showEmptyCase]="viewModel.products.length <= 0"
+    [showLoading]="viewModel.isLoading"
+  >
     No se encontraron resultados
-  </div>
+  </full-moon-state-indicator>
 </div>

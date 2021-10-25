@@ -38,20 +38,23 @@ export class DetailPage implements OnInit, OnDestroy {
   }
 
   private async loadDetail(id: string) {
-    if (!id) {
-      this.viewModel.product = null;
+    this.viewModel.product = null;
 
+    if (!id) {
       return;
     }
 
     try {
+      this.viewModel.isLoading = true;
       this.viewModel.product = await this.productInteractor.detail(
         encodeURIComponent(id)
       );
 
       this.categoriesService.emit(this.viewModel.product.categories);
+      this.viewModel.isLoading = false;
     } catch (error) {
       this.viewModel.product = null;
+      this.viewModel.isLoading = false;
       console.log(error);
     }
   }

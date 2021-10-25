@@ -4,8 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UiAngularComponentsModule } from '../components/ui-angular-components.module';
 import { HeaderOrganism } from './header/header.organism';
+import { StateIndicatorOrganism } from './state-indicator/state-indicator.organism';
 
-const DECLARATIONS = [HeaderOrganism];
+const DECLARATIONS = [HeaderOrganism, StateIndicatorOrganism];
 
 @NgModule({
   imports: [

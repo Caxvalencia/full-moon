@@ -29,7 +29,10 @@
     </div>
   </div>
 
-  <div *ngIf="!viewModel.product" class="empty-case flex">
+  <full-moon-state-indicator
+    [showEmptyCase]="!viewModel.product"
+    [showLoading]="viewModel.isLoading"
+  >
     No se encontraron resultados
-  </div>
+  </full-moon-state-indicator>
 </div>
