@@ -70,13 +70,28 @@ nx serve light-side-angular # default port is 4200
 For generating the production build run the following command:
 
 ```bash
-make deploy
+make deploy # generate the production build images with docker
 ```
+
+for running servers via docker run:
+
+```bash
+make run-deploy
+```
+
+and stop the servers with:
+
+```bash
+make stop-deploy
+```
+
+> Note: view the generated docker images with: `docker images ls`
 
 # Stack
 
 ![alt text](./project-graph.jpg)
 
+- [Docker](https://www.docker.com/))
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
 - [NPM](https://www.npmjs.com/)
