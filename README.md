@@ -73,16 +73,16 @@ For generating the production build run the following command:
 make deploy # generate the production build images with docker
 ```
 
-for running servers via docker run:
+for re-running container servers via docker run:
 
 ```bash
-make run-deploy
+make deploy-start
 ```
 
 and stop the servers with:
 
 ```bash
-make stop-deploy
+make deploy-down
 ```
 
 > Note: view the generated docker images with: `docker images ls`

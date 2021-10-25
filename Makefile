@@ -9,12 +9,16 @@ run-servers:
 
 deploy:
 	nx run-many --target=deploy --projects=dark-side-express,light-side-angular --parallel
-	make run-deploy
+	make deploy-run
 
-run-deploy:
+deploy-run:
 	docker run -d -p 3333:3333 --name dark-side-express-server dark-side-express
-	docker run -d -p 4200:4200 --name light-side-angular-client light-side-angular
+	docker run -d -p 4200:80 --name light-side-angular-client light-side-angular
 
-stop-deploy:
+deploy-up:
+	docker start dark-side-express-server
+	docker start light-side-angular-client
+
+deploy-down:
 	docker stop dark-side-express-server
 	docker stop light-side-angular-client

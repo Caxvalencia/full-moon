@@ -1,12 +1,13 @@
-FROM node:lts-alpine
+FROM node:lts-alpine AS builder
 
 WORKDIR /app
 COPY ./dist/apps/light-side-angular .
-
-ENV PORT=4200
-EXPOSE ${PORT}
-
 RUN npm install --production
-RUN npm install reflect-metadata tslib rxjs
 
-CMD node ./main.js
+
+FROM nginx:1.19.2
+
+WORKDIR /usr/share/nginx/html
+
+COPY --from=builder /app ./
+COPY ./apps/light-side-angular/nginx.conf /etc/nginx/nginx.conf
