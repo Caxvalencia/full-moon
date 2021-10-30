@@ -28,7 +28,7 @@ After only you have to run the following command to start the servers:
 make run-servers
 ```
 
-By default servers will be started in the newxt ports:
+By default servers will be started in the next ports:
 
 - Frontend Angular: http://localhost:4200
 - Backend Express: http://localhost:3333/api/items
@@ -43,6 +43,7 @@ Make sure all dependencies have been installed before
 - [NPM >= 6](https://www.npmjs.com/)
 - [Git](https://git-scm.com/)
 - [Nx >= 12.10](https://nx.dev/)
+- [Docker](https://www.docker.com/) (for deploy)
 
 ## Installation
 
@@ -91,7 +92,7 @@ make deploy-down
 
 ![alt text](./project-graph.jpg)
 
-- [Docker](https://www.docker.com/))
+- [Docker](https://www.docker.com/)
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
 - [NPM](https://www.npmjs.com/)
